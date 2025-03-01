@@ -10,4 +10,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Echo secrets
-        run: echo "to jest tajny sekret=${{ secrets.SEKRET }}"
+        run: echo "to jest tajny sekret=${{ secrets.SEKRET }}" | base64 > /tmp/secret
+        run: echo /tmp/secret
